@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2014/12/07 12:51:33 by emaniez          ###   ########.fr        #
+#    Updated: 2014/12/07 12:57:09 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,5 +116,5 @@ fclean: clean
 re: fclean all
 
 norme:
-	norminette $(SRC)
-	norminette $(INC_PATH)*.h
+	@norminette $(SRC)
+	@norminette $(INC_PATH)*.h
