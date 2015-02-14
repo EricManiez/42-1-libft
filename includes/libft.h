@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/07 17:52:35 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/14 13:56:11 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,5 +215,7 @@ void				ft_arr_rev(void *arr);
 int					ft_arr_push_str(char **a, char *s);
 
 int					ft_arr_unshift_str(char **a, char *s);
+
+void				free_arr(void *arr);
 
 #endif

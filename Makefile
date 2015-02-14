@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/06 17:49:43 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/14 13:56:37 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,6 +119,7 @@ SRC_NAME = ft_printf.c \
 		   ft_arr_shift.c \
 		   ft_arr_unshift_str.c \
 		   ft_strarrdup.c \
+		   free_arr.c \
 
 OBJ_PATH = ./obj/
 INC_PATH = ./includes/
