@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/06 11:44:02 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 11:44:04 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void	ft_swap(void *s1, void *s2)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	void	*s3;
+	void	**one;
+	void	**two;
+
+	one = s1;
+	two = s2;
+	s3 = *one;
+	*one = *two;
+	*two = s3;
 }

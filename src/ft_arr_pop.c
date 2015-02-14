@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_arr_pop.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/06 11:44:15 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 13:27:38 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Removes the last element of an array, and returns it.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void	*ft_arr_pop(void *arr)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	char	*ret;
+	int		i;
+	void	**a;
+
+	a = arr;
+	i = -1;
+	while (a[++i])
+		;
+	ret = ft_strdup(a[--i]);
+	a[i] = NULL;
+	return (ret);
 }

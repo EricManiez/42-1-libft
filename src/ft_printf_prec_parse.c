@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_printf_prec_parse.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/22 09:56:07 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/22 13:25:17 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int		ft_isdigit(int c)
+int			ft_printf_prec_parse(char *cs)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
+	char	*prec;
+
+	prec = "";
+	while (*cs && *cs != '.')
+		cs++;
+	if (!*cs)
+		return (-1);
+	while (*(++cs) && ft_isdigit(*cs))
+		prec = ft_charjoin(prec, *cs);
+	if (!prec[0])
 		return (0);
+	return (ft_atoi(prec));
 }

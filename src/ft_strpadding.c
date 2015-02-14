@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_padding.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/19 16:44:52 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/21 13:55:20 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Allocates necessary memory;
+** Adds character "c" to string "s", "size" times.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void	ft_strpadding(size_t size, char c, char **s)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	while (size)
+	{
+		*(s) = ft_charjoin(*(s), c);
+		size--;
+	}
 }

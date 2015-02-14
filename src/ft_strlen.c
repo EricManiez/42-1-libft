@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:21:19 by emaniez           #+#    #+#             */
-/*   Updated: 2014/11/07 10:28:16 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/01/21 10:43:17 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (s[index])
-		index++;
-	return (index);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

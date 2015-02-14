@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_arr_rev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/06 11:45:11 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 14:19:54 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Reverses all the elements in an array.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void	ft_arr_rev(void *arr)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	int		elems;
+	int		i;
+	void	**a;
+
+	a = arr;
+	if ((int)ft_arrlen(a) < 2)
+		return ;
+	elems = ft_arrlen(a) - 1;
+	i = 0;
+	while (i < elems)
+	{
+		ft_swap(&a[i], &a[elems]);
+		i++;
+		elems--;
+	}
 }

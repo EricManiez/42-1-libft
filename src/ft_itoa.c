@@ -3,41 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 11:13:59 by emaniez           #+#    #+#             */
-/*   Updated: 2014/11/12 10:23:44 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/19 11:53:47 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/21 09:01:49 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n, int absoluter)
 {
-	int		i;
-	int		j;
-	int		numlen;
+	long	j;
 	char	*res;
 
-	i = -1;
-	j = 0;
-	if (n == -2147483648)
-		return ("-2147483648");
-	numlen = ft_numlen(n);
-	if (n < 0)
-		j = 1;
-	if (n < 0)
-		n = n * -1;
-	if (!(res = (char*)malloc(numlen + j)))
-		return (NULL);
-	while (++i < numlen + j)
+	res = "";
+	j = n;
+	if (j == 0)
+		return (ft_charjoin(res, '0'));
+	if (j == LONG_MAX)
+		return (ft_strjoin(res, "9223372036854775807"));
+	if (j == LONG_MIN)
+		return (ft_strjoin(res, "-9223372036854775808"));
+	if (j < 0)
+		j = n * -1;
+	while (j)
 	{
-		res[i + j] = (n / ft_pow(10, numlen - i - 1)) + 48;
-		n = n - ((n / ft_pow(10, numlen - i - 1)) * ft_pow(10, numlen - i - 1));
+		res = ft_charjoin(res, j % 10 + 48);
+		j = j / 10;
 	}
-	if (j == 1)
-		res[0] = '-';
-	res[i] = '\0';
-	return (res);
+	if (n < 0 && !absoluter)
+		res = ft_charjoin(res, '-');
+	return (ft_strrev(res));
 }

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   endianness.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/28 10:17:55 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/28 11:37:14 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Figures out the endianness of the machine you're using. Returns 0 for little.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int		ft_endianness(void)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
+	int num;
+
+	num = 1;
+	if (*(char *)&num == 1)
 		return (0);
+	else
+		return (1);
 }

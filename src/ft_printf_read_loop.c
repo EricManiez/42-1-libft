@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_printf_read_loop.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/15 12:04:15 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/21 15:46:55 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int		ft_isdigit(int c)
+void	ft_printf_read_loop(char **str, va_list ap, char *format)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	char	*cs;
+	int		prog;
+
+	prog = -1;
+	cs = "";
+	while ((prog = ft_printf_parser(format, str, &cs, prog)))
+	{
+		if (cs[0])
+			ft_printf_typedef(cs, str, ap);
+	}
 }

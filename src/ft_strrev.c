@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/15 15:17:12 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/04 16:52:06 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+char		*ft_strrev(char *s)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	int		i;
+	char	*res;
+
+	i = -1;
+	res = "";
+	while (ft_strlen(s) - ++i)
+		res = ft_charjoin(res, s[ft_strlen(s) - i]);
+	res = ft_charjoin(res, s[ft_strlen(s) - i]);
+	return (res);
 }

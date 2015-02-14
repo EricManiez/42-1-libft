@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/19 13:38:28 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+char	*ft_uitoa(unsigned long n)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	char	*res;
+
+	res = "";
+	if (n == 0)
+		return (ft_charjoin(res, '0'));
+	while (n)
+	{
+		res = ft_charjoin(res, n % 10 + 48);
+		n = n / 10;
+	}
+	return (ft_strrev(res));
 }

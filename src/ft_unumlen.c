@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_unumlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/19 11:27:49 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/19 11:33:30 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+size_t	ft_unumlen(unsigned long int n)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	int		i;
+
+	i = 0;
+	while (n > 9)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i + 1);
 }

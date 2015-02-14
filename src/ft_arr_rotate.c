@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_arr_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 14:40:32 by emaniez           #+#    #+#             */
-/*   Updated: 2014/12/09 11:45:47 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/06 11:45:32 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 17:49:29 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Rotates all the elements in an array closer to 0.
+** This means that the the first element becomes last.
+*/
+
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_arr_rotate(void *arr)
 {
-	if (alst == NULL || new == NULL)
+	int		i;
+	void	**a;
+
+	i = 0;
+	a = arr;
+	if ((int)ft_arrlen(a) < 2)
 		return ;
-	new->next = *alst;
-	*alst = new;
+	while (++i < (int)ft_arrlen(a))
+		ft_swap(&a[i], &a[i - 1]);
 }

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_charjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 10:35:15 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/26 16:05:41 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/14 10:32:50 by emaniez           #+#    #+#             */
+/*   Updated: 2015/01/21 15:29:07 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_charjoin(char const *s, char const c)
 {
-	unsigned int		j;
-	char				*sub;
+	int		i;
+	int		totlen;
+	char	*cat;
 
-	j = -1;
-	if (!(sub = (char*)malloc(len + 1)))
+	i = -1;
+	if (s == NULL)
 		return (NULL);
-	while (++j < len)
-		sub[j] = s[j + start];
-	sub[j] = '\0';
-	return (sub);
+	if (c == 0)
+		return ((char*)s);
+	totlen = ft_strlen(s) + 1;
+	if (!(cat = (char*)malloc(totlen + 1)))
+		return (NULL);
+	while (s[++i])
+		cat[i] = s[i];
+	cat[i] = c;
+	cat[++i] = '\0';
+	return (cat);
 }

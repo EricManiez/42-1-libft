@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_charraylen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/04 11:40:01 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 14:49:51 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Calculates the number of present in the "a" array.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+size_t		ft_arrlen(void *a)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
+	size_t	elem;
+	void	**arr;
+
+	if (!a)
 		return (0);
+	elem = 0;
+	arr = a;
+	while (arr[elem])
+		elem++;
+	return (elem);
 }

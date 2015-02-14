@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_arr_unshift_str.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/06 11:46:41 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 13:58:20 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Adds a new element (s) to the beginning of a string array.
+*/
+
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int		ft_arr_unshift_str(char **a, char *s)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	ft_arr_rev(a);
+	ft_arr_push_str(a, s);
+	ft_arr_rev(a);
+	return (ft_arrlen(a));
 }

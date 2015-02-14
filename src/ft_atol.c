@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:24:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/19 16:43:22 by emaniez          ###   ########.fr       */
+/*   Created: 2014/11/04 15:13:08 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 17:33:27 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int		ft_isdigit(int c)
+long	ft_atol(const char *str)
 {
-	if (48 <= c && c <= 57)
-		return (1);
-	else
-		return (0);
+	long	value;
+	int		sign;
+
+	value = 0;
+	sign = 1;
+	while ((*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
+				|| *str == '\r' || *str == ' '))
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		value *= 10;
+		value += (long)(*str - '0');
+		str++;
+	}
+	return (value * sign);
 }
