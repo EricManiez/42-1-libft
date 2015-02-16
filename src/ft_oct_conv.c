@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 10:26:09 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/22 09:05:13 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/14 14:38:01 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char				*ft_oct_conv(unsigned long int dec, int lead_0)
 	while (dec)
 	{
 		mid = dec % 8;
-		oct = ft_strjoin(oct, ft_itoa(mid, 1));
+		oct = ft_strjoin(oct, ft_itoa(mid));
 		dec /= 8;
 	}
 	if (lead_0)

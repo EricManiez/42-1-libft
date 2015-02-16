@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 10:11:03 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/22 13:25:36 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/14 17:44:37 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ size_t	ft_printf_width_parse(char *cs);
 int		ft_printf_prec_parse(char *cs);
 
 void	ft_printf_post_print(char *cs, char **s, va_list cpy);
+
+char	*ft_printf_itoa(long n, int absoluter);
 
 #endif

@@ -1,4 +1,6 @@
-test.c
-a.out
-*.o
+*.swp
+*.a
 .DS_Store
+*test.c
+*.o
+a.out

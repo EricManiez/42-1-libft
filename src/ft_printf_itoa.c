@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_printf_itoa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:53:47 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/14 14:21:32 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/14 14:23:00 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/14 14:26:57 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_itoa(long n)
+char	*ft_printf_itoa(long n, int absoluter)
 {
 	long	j;
 	char	*res;
@@ -32,5 +32,7 @@ char	*ft_itoa(long n)
 		res = ft_charjoin(res, j % 10 + 48);
 		j = j / 10;
 	}
+	if (!absoluter)
+		res = ft_charjoin(res, '-');
 	return (ft_strrev(res));
 }

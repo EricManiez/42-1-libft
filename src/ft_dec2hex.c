@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 14:54:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/21 16:26:38 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/14 14:37:28 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void			hex_conv_sub(unsigned long dec, char **hex)
 		else if (mid == 15)
 			*(hex) = ft_charjoin(*(hex), 'f');
 		else
-			*(hex) = ft_strjoin(*(hex), ft_itoa(mid, 1));
+			*(hex) = ft_strjoin(*(hex), ft_itoa(mid));
 		dec /= 16;
 	}
 }

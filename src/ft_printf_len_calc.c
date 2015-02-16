@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 13:33:15 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/22 13:26:39 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/14 14:36:33 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ size_t		ft_printf_len_calc(va_list cpy, char *cs)
 	else if (ft_strchr("p", cs[ft_strlen(cs) - 1]))
 		s = ft_strjoin(s, ft_dec2hex((unsigned long)va_arg(cpy, void*), 0, 0));
 	else if (ft_strchr("dDi", cs[ft_strlen(cs) - 1]))
-		s = ft_strjoin(s, ft_itoa((int)va_arg(cpy, long), 1));
+		s = ft_strjoin(s, ft_printf_itoa((int)va_arg(cpy, long), 1));
 	else if (ft_strchr("oO", cs[ft_strlen(cs) - 1]))
 		oct_conv_sub(&s, cs, cpy);
 	else if (ft_strchr("xX", cs[ft_strlen(cs) - 1]))
