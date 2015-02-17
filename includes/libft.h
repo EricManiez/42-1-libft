@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/16 14:45:30 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/17 08:51:04 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,6 +218,7 @@ int					ft_arr_unshift_str(char **a, char *s);
 
 void				free_arr(void *arr);
 
-int					ft_simple_getopt(const char **av, const char *opts, char **optopt);
+int					ft_simple_getopt(const char **av, const char *opts,
+		char **optopt, int *optind);
 
 #endif
