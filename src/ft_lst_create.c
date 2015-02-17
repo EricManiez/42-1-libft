@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst_create.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 14:40:32 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 14:52:28 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/17 15:42:39 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/17 16:44:43 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *new)
+t_lst	*ft_lst_create(void)
 {
-	if (alst == NULL || new == NULL)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	t_lst	*lst;
+
+	lst = (t_lst*)malloc(sizeof(t_lst));
+	lst->head = NULL;
+	lst->tail = NULL;
+	return (lst);
 }

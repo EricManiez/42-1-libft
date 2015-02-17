@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 08:51:04 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/17 16:44:37 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,21 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_node
+{
+	void			*content;
+	size_t			content_size;
+	char			*key;
+	struct s_node	*next;
+	struct s_node	*prev;
+}					t_node;
+
+typedef struct		s_lst
+{
+	struct s_node	*head;
+	struct s_node	*tail;
+}					t_lst;
 
 int					get_next_line(int const fd, char **line);
 
@@ -156,15 +171,29 @@ int					ft_isspace(char c);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdelone(t_lst **alst, void (*del)(void*, size_t));
 
 void				ft_lstadd(t_list **alst, t_list *new);
 
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_lstiter(t_lst *list, void (*f)(t_list *elem));
 
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+
+t_node				*ft_lst_create_node(void *content, size_t content_size);
+
+t_lst				*ft_lst_create(void);
+
+t_lst				*ft_lst_init(void *content, size_t content_size);
+
+size_t				ft_lst_len(t_lst *lst);
+
+void				ft_lst_link(t_node *node1, t_node *node2);
+
+size_t				ft_lst_push(t_lst *lst, void *content, size_t content_size);
+
+size_t				ft_lst_unshift(t_lst *lst, void *cntnt, size_t cntnt_size);
 
 char				*ft_strchrstr(char *s, char *charset);
 

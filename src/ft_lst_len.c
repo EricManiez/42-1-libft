@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 14:40:32 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 14:52:28 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/17 15:23:40 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/17 15:57:56 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *new)
+size_t	ft_lst_len(t_lst *lst)
 {
-	if (alst == NULL || new == NULL)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	size_t	len;
+	t_node	*ptr;
+
+	if (lst->head && lst->tail)
+	{
+		len = 1;
+		ptr = lst->head;
+		while (ptr != lst->tail)
+		{
+			ptr = ptr->next;
+			len++;
+		}
+		return (len);
+	}
+	return (0);
 }

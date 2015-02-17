@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lst_link.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 14:40:32 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 14:52:28 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/17 16:22:31 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/17 16:28:43 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_lst **alst, t_lst *new)
+void	ft_lst_link(t_node *node1, t_node *node2)
 {
-	if (alst == NULL || new == NULL)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	if (node1)
+		node1->next = node2;
+	if (node2)
+		node2->prev = node1;
 }

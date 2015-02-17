@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/14 17:27:34 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/17 16:24:59 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,12 +41,13 @@ SRC_NAME = ft_printf.c \
 		   ft_isupper.c \
 		   ft_itoa.c \
 		   ft_uitoa.c \
-		   ft_lstadd.c \
-		   ft_lstdel.c \
-		   ft_lstdelone.c \
-		   ft_lstiter.c \
-		   ft_lstmap.c \
-		   ft_lstnew.c \
+		   ft_lst_create_node.c \
+		   ft_lst_create.c \
+		   ft_lst_init.c \
+		   ft_lst_len.c \
+		   ft_lst_link.c \
+		   ft_lst_push.c \
+		   ft_lst_unshift.c \
 		   ft_memalloc.c \
 		   ft_memccpy.c \
 		   ft_memchr.c \
