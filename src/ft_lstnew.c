@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 13:40:37 by emaniez           #+#    #+#             */
-/*   Updated: 2014/12/07 12:33:10 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/18 18:32:11 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	if (!(node->content = malloc(content_size)))
 		return (NULL);
-	memmove(node->content, content, content_size);
+	ft_memmove(node->content, content, content_size);
 	node->content_size = content_size;
 	node->next = NULL;
 	return (node);

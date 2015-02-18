@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 16:44:37 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/17 17:22:09 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,11 +171,11 @@ int					ft_isspace(char c);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 
-void				ft_lstdelone(t_lst **alst, void (*del)(void*, size_t));
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 
 void				ft_lstadd(t_list **alst, t_list *new);
 
-void				ft_lstiter(t_lst *list, void (*f)(t_list *elem));
+void				ft_lstiter(t_list *list, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 
