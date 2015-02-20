@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/17 17:20:44 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/20 15:12:32 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,20 +129,29 @@ SRC_NAME = ft_printf.c \
 		   ft_strarrdup.c \
 		   free_arr.c \
 		   ft_simple_getopt.c \
+		   mlx_initiate.c \
+		   mlx_draw_img_pix.c \
+		   mlx_draw_line.c \
+
+INC_PATH = ./includes/
+
+INC_NAME = libft.h \
+		   ft_printf.h \
+		   ft_mlx.h \
 
 OBJ_PATH = ./obj/
-INC_PATH = ./includes/
 
 NAME = libft.a
 
 CC = gcc
 CFLAGS = -g -Werror -Wall -Wextra
+CMLX = -L/usr/X11/lib -lmlx -lXext -lX11 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
-INC = ./includes/libft.h
+INC = $(addprefix $(INC_PATH), $(INC_NAME))
 
 all: $(NAME)
 
@@ -152,8 +161,8 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) : library has been compiled successfully"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
-	@mkdir -p $(OBJ_PATH)
-	@$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
+	@mkdir -p $(OBJ_PATH) 
+	@$(CC) $(CFLAGS) -I$(INC_PATH) $(CMLX) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJ)
@@ -162,7 +171,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) : executable file has been removed succesully"
+	@echo "$(NAME) : library file has been removed succesully"
 
 re: fclean all
 

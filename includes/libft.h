@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 17:22:09 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/20 15:03:21 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "ft_printf.h"
+# include "ft_mlx.h"
 
 typedef struct		s_list
 {
