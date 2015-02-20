@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/20 15:12:32 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/20 17:09:42 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,7 @@ SRC_NAME = ft_printf.c \
 		   mlx_initiate.c \
 		   mlx_draw_img_pix.c \
 		   mlx_draw_line.c \
+		   mlx_coord_2_addr.c \
 
 INC_PATH = ./includes/
 

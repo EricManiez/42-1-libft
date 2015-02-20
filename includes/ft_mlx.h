@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 13:48:34 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/20 15:24:12 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/20 17:09:43 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void			mlx_initiate(t_env *mlx, char *name);
 void			mlx_draw_img_pix(t_env *mlx, int addr, int color);
 
 void			mlx_draw_line(t_coord one, t_coord two, t_env *mlx, int color);
+
+int				mlx_coord_2_addr(int x, int y, t_env *mlx);
 
 void			alloc_error();
 
