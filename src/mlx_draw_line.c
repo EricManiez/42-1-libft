@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 15:12:51 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/20 15:22:17 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/23 10:05:23 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,3 @@ void		mlx_draw_line(t_coord one, t_coord two, t_env *mlx, int color)
 			drawl_steep(two, one, mlx, color);
 	}
 }
-

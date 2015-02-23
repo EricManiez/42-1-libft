@@ -6,11 +6,11 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/20 17:09:42 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/23 10:50:56 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, $(NAME), $(LIB) clean, fclean, re, norme
+.PHONY: all, $(NAME), clean, fclean, re, norme
 
 SRC_PATH = ./src/
 
@@ -133,6 +133,8 @@ SRC_NAME = ft_printf.c \
 		   mlx_draw_img_pix.c \
 		   mlx_draw_line.c \
 		   mlx_coord_2_addr.c \
+		   ft_free_str_arr.c \
+		   ft_arrstr.c \
 
 INC_PATH = ./includes/
 
