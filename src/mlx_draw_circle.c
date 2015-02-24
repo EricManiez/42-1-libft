@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:33:42 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/24 16:58:00 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/24 17:33:05 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	mlx_draw_circle(t_coord *ctr, int rad, t_env *mlx, int color)
 	angle = 0;
 	while (angle < 360)
 	{
-		addr = mlx_coord_2_addr
-			(ctr->x + rad * cos(angle), ctr->y + rad * sin(angle), mlx);
-		mlx_draw_img_pix(mlx, addr, color);
+		if ((addr = mlx_coord_2_addr
+			(ctr->x + rad * cos(angle), ctr->y + rad * sin(angle), mlx)) >= 0)
+			mlx_draw_img_pix(mlx, addr, color);
 		angle += (2 * 3.14) / (8 * rad);
 	}
 }
