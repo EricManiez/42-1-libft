@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 13:48:34 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/20 17:09:43 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/24 16:54:19 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,21 @@
 # define K_PGDWN 65366
 # define K_PL 65451
 # define K_MIN 65453
-# define K_P 112
-# define K_I 105
-# define K_C 99
-# define K_R 114
-# define K_G 103
+# define K_A 97
 # define K_B 98
+# define K_C 99
+# define K_D 100
+# define K_G 103
+# define K_I 105
 # define K_L 108
 # define K_O 111
-# define WIN_W 1280
-# define WIN_H 1280
+# define K_P 112
+# define K_R 114
+# define K_S 115
+# define K_W 119
+
+# define WIN_W 400
+# define WIN_H 400
 # define RGB(r, g, b)(256 * 256 * (int)(r) + 256 * (int)(g) + (int)(b))
 
 typedef struct	s_mlx
@@ -54,6 +59,9 @@ typedef struct	s_mlx
 	int			line_size;
 	int			zoom;
 	int			legend;
+	int			imgx;
+	int			imgy;
+	void		*data;
 }				t_env;
 
 typedef struct	s_coord
@@ -76,8 +84,8 @@ void			mlx_draw_img_pix(t_env *mlx, int addr, int color);
 
 void			mlx_draw_line(t_coord one, t_coord two, t_env *mlx, int color);
 
-int				mlx_coord_2_addr(int x, int y, t_env *mlx);
+void			mlx_draw_circle(t_coord *ctr, int rad, t_env *mlx, int color);
 
-void			alloc_error();
+int				mlx_coord_2_addr(int x, int y, t_env *mlx);
 
 #endif
