@@ -17,7 +17,7 @@
 ** On top of its usual behavior, frees left argument, and sets pointer to NULL.
 */
 
-char	*ft_strjoin_fl(char **s1, char **s2)
+char	*ft_strjoin_fl(char **s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -25,19 +25,19 @@ char	*ft_strjoin_fl(char **s1, char **s2)
 	char	*cat;
 
 	if (*s1 == NULL)
-		return ((char*)*s2);
-	if (*s2 == NULL)
+		return ((char*)s2);
+	if (s2 == NULL)
 		return ((char*)*s1);
 	i = -1;
 	j = -1;
-	totlen = ft_strlen(*s1) + ft_strlen(*s2);
+	totlen = ft_strlen(*s1) + ft_strlen(s2);
 	if (!(cat = (char*)malloc(totlen + 1)))
 		return (NULL);
 	while ((*s1)[++i])
 		cat[i] = (*s1)[i];
-	while ((*s2)[++j])
+	while (s2[++j])
 	{
-		cat[i] = (*s2)[j];
+		cat[i] = s2[j];
 		i++;
 	}
 	cat[i] = '\0';

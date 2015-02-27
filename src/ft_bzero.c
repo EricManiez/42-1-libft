@@ -14,11 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*dup;
-
-	i = -1;
-	dup = (char*)s;
-	while (++i < n)
-		dup[i] = '\0';
+	if (n > 0)
+		ft_memset(s, '\0', n);
 }

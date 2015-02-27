@@ -16,17 +16,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	ccp;
 	unsigned char	*scp;
-	unsigned char	*ptr;
-	unsigned int	i;
+	void			*ptr;
+	int				i;
 
-	ccp = (unsigned char)c;
+	ccp = c;
 	scp = (unsigned char*)s;
 	ptr = NULL;
 	i = -1;
-	while (++i < n)
+	while (++i < (int)n)
 	{
 		if (scp[i] == ccp)
 			ptr = &scp[i];
 	}
-	return ((void*)ptr);
+	return (ptr);
 }

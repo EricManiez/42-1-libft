@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/27 15:17:16 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/27 16:48:58 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,9 +144,13 @@ char				*ft_strjoin(char const *s1, char const *s2);
 
 char				*ft_strjoin_fb(char **s1, char **s2);
 
-char				*ft_strjoin_fl(char **s1, char **s2);
+char				*ft_strjoin_fl(char **s1, char const *s2);
 
-char				*ft_strjoin_fr(char **s1, char **s2);
+char				*ft_strjoin_fr(char const *s1, char **s2);
+
+char				*ft_charjoin(char const *s, char const c);
+
+char				*ft_charjoin_f(char **s, char const c);
 
 char				*ft_strnjoin(char const *s1, char const *s2, size_t length);
 
@@ -207,8 +211,6 @@ size_t				ft_lst_unshift(t_lst *lst, void *cntnt, size_t cntnt_size);
 char				*ft_strchrstr(char *s, char *charset);
 
 char				*ft_strchrstrinv(char *s, char *charset);
-
-char				*ft_charjoin(char const *s, char const c);
 
 char				*ft_dec2hex(unsigned long dec, int memswitch, char caps);
 

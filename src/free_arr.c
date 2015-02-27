@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/14 13:49:27 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/14 14:04:59 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/27 17:06:57 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ void	free_arr(void *arr)
 	a = arr;
 	while (*a)
 	{
-		free(*a);
-		*a = NULL;
+		ft_memdel(a);
 		a++;
 	}
-	free(arr);
-	arr = NULL;
+	ft_memdel(&arr);
 }
