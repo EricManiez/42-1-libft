@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/23 10:51:25 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/27 15:17:16 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char				*ft_strrchr(const char *s, int c);
 
 char				*ft_strdup(const char *s1);
 
+char				*ft_strdup_f(char **s1);
+
 char				*ft_strstr(const char *s1, const char *s2);
 
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -139,6 +141,12 @@ char				*ft_strtrim(char const *s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
 char				*ft_strjoin(char const *s1, char const *s2);
+
+char				*ft_strjoin_fb(char **s1, char **s2);
+
+char				*ft_strjoin_fl(char **s1, char **s2);
+
+char				*ft_strjoin_fr(char **s1, char **s2);
 
 char				*ft_strnjoin(char const *s1, char const *s2, size_t length);
 

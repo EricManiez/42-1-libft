@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/02/24 16:54:17 by emaniez          ###   ########.fr        #
+#    Updated: 2015/02/27 15:17:20 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,7 @@ SRC_NAME = ft_printf.c \
 		   ft_strcpy.c \
 		   ft_strdel.c \
 		   ft_strdup.c \
+		   ft_strdup_f.c \
 		   ft_strequ.c \
 		   ft_striter.c \
 		   ft_striteri.c \
@@ -136,6 +137,9 @@ SRC_NAME = ft_printf.c \
 		   mlx_draw_circle.c \
 		   ft_free_str_arr.c \
 		   ft_arrstr.c \
+		   ft_strjoin_fb.c \
+		   ft_strjoin_fl.c \
+		   ft_strjoin_fr.c \
 
 INC_PATH = ./includes/
 

@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 11:03:35 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/24 17:00:18 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/26 11:16:17 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	mlx_initiate(t_env *mlx, char *name)
 	mlx->imgx = 0;
 	mlx->imgy = 0;
 	mlx->endian = ft_endianness();
-	if(!(mlx->ptr = mlx_init()))
+	if (!(mlx->ptr = mlx_init()))
 		error(name);
 	mlx->win = mlx_new_window(mlx->ptr, WIN_W, WIN_H, name);
 	if (!(mlx->img = mlx_new_image(mlx->ptr, WIN_W, WIN_H)))

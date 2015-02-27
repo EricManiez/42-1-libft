@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:33:42 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/24 17:33:05 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/26 11:16:35 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	mlx_draw_circle(t_coord *ctr, int rad, t_env *mlx, int color)
 {
-	double angle;
+	double	angle;
 	int		addr;
 
 	angle = 0;
