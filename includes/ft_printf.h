@@ -6,16 +6,15 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 10:11:03 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/14 17:44:37 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/27 21:02:35 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdio.h>
-# include "libft.h"
-# include <unistd.h>
 # include <stdarg.h>
+# include <libft.h>
 
 # define CONV_SPEC "sSpdDioOuUxXcC"
 # define PRINTF_CHARS "sSpdDioOuUxXcC#0123456789-+. lzjh"

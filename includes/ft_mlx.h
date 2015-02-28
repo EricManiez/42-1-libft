@@ -6,21 +6,17 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 13:48:34 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/24 17:29:46 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/27 21:03:07 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MLX_H
 # define FT_MLX_H
 # include <mlx.h>
-# include <unistd.h>
-# include <stdlib.h>
 # include <math.h>
-# include "libft.h"
 # include <fcntl.h>
 # include <errno.h>
-# include <string.h>
-# include "libft.h"
+# include <libft.h>
 
 # define K_ESC 65307
 # define K_LEFT 65361
