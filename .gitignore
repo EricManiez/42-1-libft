@@ -1,6 +1,6 @@
 *.swp
 *.a
 .DS_Store
-*test.c
+*test*.c
 *.o
 a.out
