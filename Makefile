@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/01 11:19:26 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/01 14:05:31 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,6 +124,9 @@ SRC_NAME = ft_printf.c \
 		   ft_arrlen.c \
 		   ft_print_strarray.c \
 		   ft_print_intarray.c \
+		   ft_intarrdup.c \
+		   ft_2dintarrdup.c \
+		   ft_2dintarr_free.c \
 		   ft_swap.c \
 		   ft_arr_pop.c \
 		   ft_arr_push_str.c \

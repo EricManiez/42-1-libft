@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/01 11:18:54 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 14:08:17 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,6 +241,12 @@ size_t				ft_arrlen(void *a);
 void				ft_print_strarray(char **a, int newline);
 
 void				ft_print_intarray(int **a, size_t y, size_t x);
+
+int					*ft_intarrdup(int *a, size_t s);
+
+int					**ft_2dintarrdup(int **a, size_t y, size_t x);
+
+void				ft_2dintarr_free(int ***a, size_t y);
 
 char				**ft_strarrdup(char **a);
 
