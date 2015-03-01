@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/01 14:08:17 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 14:47:34 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,7 +244,11 @@ void				ft_print_intarray(int **a, size_t y, size_t x);
 
 int					*ft_intarrdup(int *a, size_t s);
 
+int					ft_intarrequ(int *a, int *b, size_t s);
+
 int					**ft_2dintarrdup(int **a, size_t y, size_t x);
+
+int					ft_2dintarrequ(int **a, int **b, size_t y, size_t x);
 
 void				ft_2dintarr_free(int ***a, size_t y);
 
