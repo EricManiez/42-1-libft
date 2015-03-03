@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/01 14:47:02 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/03 12:40:48 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,7 +120,8 @@ SRC_NAME = ft_printf.c \
 		   ft_abs.c \
 		   get_next_line.c \
 		   ft_endianness.c \
-		   ft_check_strnumarray_sort.c \
+		   ft_issort_strnumarray.c \
+		   ft_isrsort_strnumarray.c \
 		   ft_arrlen.c \
 		   ft_print_strarray.c \
 		   ft_print_intarray.c \
@@ -160,7 +161,6 @@ NAME = libft.a
 
 CC = gcc
 CFLAGS = -g -Werror -Wall -Wextra
-CMLX = -L/usr/X11/lib -lmlx -lXext -lX11 
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -177,7 +177,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
 	@mkdir -p $(OBJ_PATH) 
-	@$(CC) $(CFLAGS) -I$(INC_PATH) $(CMLX) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJ)

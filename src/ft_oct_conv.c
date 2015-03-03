@@ -6,13 +6,11 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 10:26:09 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/14 14:38:01 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:48:30 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 char				*ft_oct_conv(unsigned long int dec, int lead_0)
 {

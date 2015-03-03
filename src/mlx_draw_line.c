@@ -6,13 +6,13 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 15:12:51 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/23 10:05:23 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:54:04 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mlx.h"
 
-void		drawl_steep(t_coord one, t_coord two, t_env *mlx, int color)
+static void		drawl_steep(t_coord one, t_coord two, t_env *mlx, int color)
 {
 	int		y;
 	int		addr;
@@ -28,7 +28,7 @@ void		drawl_steep(t_coord one, t_coord two, t_env *mlx, int color)
 	}
 }
 
-void		drawl_flat(t_coord one, t_coord two, t_env *mlx, int color)
+static void		drawl_flat(t_coord one, t_coord two, t_env *mlx, int color)
 {
 	int		x;
 	int		addr;
@@ -44,7 +44,7 @@ void		drawl_flat(t_coord one, t_coord two, t_env *mlx, int color)
 	}
 }
 
-void		mlx_draw_line(t_coord one, t_coord two, t_env *mlx, int color)
+void			mlx_draw_line(t_coord one, t_coord two, t_env *mlx, int color)
 {
 	if (one.x == two.x && one.y == two.y)
 		;

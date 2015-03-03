@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/06 11:29:25 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/03 10:59:24 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	ft_print_strarray(char **a, int newline)
 	int	i;
 
 	i = -1;
+	if (!a || !a[0])
+	{
+		ft_putchar('\n');
+		return ;
+	}
 	while (a[++i])
 	{
 		if (!newline)

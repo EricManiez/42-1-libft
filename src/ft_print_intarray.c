@@ -6,13 +6,13 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 11:10:28 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/01 11:20:56 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:53:01 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		biggest_num(int **arr, size_t y, size_t x)
+static int	biggest_num(int **arr, size_t y, size_t x)
 {
 	size_t	ret;
 	size_t	i;
@@ -34,7 +34,7 @@ int		biggest_num(int **arr, size_t y, size_t x)
 	return (ret);
 }
 
-void	ft_print_intarray(int **arr, size_t y, size_t x)
+void		ft_print_intarray(int **arr, size_t y, size_t x)
 {
 	int		maxlen;
 	size_t	i;

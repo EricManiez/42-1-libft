@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 11:03:35 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/26 11:16:17 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:53:52 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 ** Also creates an image and stores the adress within mlx struct.
 */
 
-void	error(char *name)
+static void	error(char *name)
 {
 	ft_printf("\n%s : mlx function error! Exiting...\n\n", name);
 	exit (-1);
 }
 
-void	mlx_initiate(t_env *mlx, char *name)
+void		mlx_initiate(t_env *mlx, char *name)
 {
 	mlx->legend = 1;
 	mlx->zoom = 1;

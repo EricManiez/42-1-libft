@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/14 17:19:25 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/17 09:02:03 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:53:34 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ** argument.
 */
 
-int	spaces(int *i, int *j, char **optopt, const char **av)
+static int	spaces(int *i, int *j, char **optopt, const char **av)
 {
 	if (!av[*i][*j])
 	{
@@ -37,7 +37,7 @@ int	spaces(int *i, int *j, char **optopt, const char **av)
 	return (0);
 }
 
-int	double_hyphen(int *i, int *j, char **optopt, const char **av)
+static int	double_hyphen(int *i, int *j, char **optopt, const char **av)
 {
 	if (av[*i][*j] == '-')
 	{
@@ -62,7 +62,7 @@ int	double_hyphen(int *i, int *j, char **optopt, const char **av)
 	return (0);
 }
 
-int	error_return(int *hyphen, int *i, int *j, int *optind)
+static int	error_return(int *hyphen, int *i, int *j, int *optind)
 {
 	if (optind)
 		*optind = *i;
@@ -72,7 +72,7 @@ int	error_return(int *hyphen, int *i, int *j, int *optind)
 	return (-1);
 }
 
-int	opening_hyphen(const char **av, int *hyphen)
+static int	opening_hyphen(const char **av, int *hyphen)
 {
 	if (*hyphen == 1)
 		return (1);
@@ -84,7 +84,7 @@ int	opening_hyphen(const char **av, int *hyphen)
 	return (0);
 }
 
-int	ft_simple_getopt(const char **av, const char *optstr,
+int			ft_simple_getopt(const char **av, const char *optstr,
 		char **optopt, int *optind)
 {
 	static int	hyphen = 0;

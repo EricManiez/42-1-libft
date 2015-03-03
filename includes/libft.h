@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/01 14:47:34 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/03 13:20:50 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,7 +234,9 @@ int					ft_endianness();
 
 void				ft_swap(void *s1, void *s2);
 
-int					ft_check_strnumarray_sort(char **a);
+int					ft_issort_strnumarray(char **a);
+
+int					ft_isrsort_strnumarray(char **a);
 
 size_t				ft_arrlen(void *a);
 

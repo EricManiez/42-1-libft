@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intarrequ.c                                     :+:      :+:    :+:   */
+/*   ft_issort_strnumarray.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/01 14:41:39 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/01 17:08:15 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/03 13:24:35 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/03 13:24:53 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+/*
+** Usage : when sorting an array of strings, in which all strings are numbers,
+** and we would like to sort numerically, with the lowest value at the front of
+** the array.
+** Function returns 1 if the array is sorted, 0 if not.
+*/
 
-int		ft_intarrequ(int *a, int *b, size_t s)
+#include "libft.h"
+
+int		ft_issort_strnumarray(char **a)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < s)
+	if (!a)
+		return (1);
+	while (a[++i])
 	{
-		if (a[i] != b[i])
+		if (a[i] && ft_atoi(a[i - 1]) > ft_atoi(a[i]))
 			return (0);
-		i++;
 	}
 	return (1);
 }

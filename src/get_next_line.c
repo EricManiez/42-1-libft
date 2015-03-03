@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/20 19:51:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/26 16:12:05 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/01 19:52:22 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int			end_1(char **line, char **buf, char **lefto)
 	return (0);
 }
 
-char				*gnl_read(int fd, char **line, char *buf)
+static char			*gnl_read(int fd, char **line, char *buf)
 {
 	int				ctrl;
 	char			*lefto;
@@ -49,7 +49,7 @@ char				*gnl_read(int fd, char **line, char *buf)
 	return (buf);
 }
 
-char				*find_buf(int fd, t_list **ll, t_list **lltr)
+static char			*find_buf(int fd, t_list **ll, t_list **lltr)
 {
 	t_list			*llsrch;
 
