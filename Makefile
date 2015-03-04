@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/03 12:40:48 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/04 09:39:42 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC_NAME = ft_printf.c \
 		   ft_isalpha.c \
 		   ft_isascii.c \
 		   ft_isdigit.c \
+		   ft_isnumerical.c \
 		   ft_islower.c \
 		   ft_isprint.c \
 		   ft_isspace.c \
@@ -141,6 +142,7 @@ SRC_NAME = ft_printf.c \
 		   ft_strarrdup.c \
 		   free_arr.c \
 		   ft_simple_getopt.c \
+		   exe_getopt.c \
 		   mlx_initiate.c \
 		   mlx_draw_img_pix.c \
 		   mlx_draw_line.c \

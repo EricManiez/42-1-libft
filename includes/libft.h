@@ -6,7 +6,7 @@
 /*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/03 13:20:50 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/04 09:37:58 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ size_t				ft_strlen(const char *s);
 int					ft_isascii(int c);
 
 int					ft_isdigit(int c);
+
+int					ft_isnumerical(char c);
 
 int					ft_isprint(int c);
 
@@ -274,6 +276,8 @@ void				free_arr(void *arr);
 
 int					ft_simple_getopt(const char **av, const char *opts,
 		char **optopt, int *optind);
+
+char				*exe_getopt(char **av, int *i, char *authorized);
 
 void				ft_free_str_arr(char **arr, size_t len);
 
