@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 14:54:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/27 16:57:28 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/05 14:57:12 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ char				*ft_dec2hex(unsigned long dec, int memswitch, char caps)
 	char			*hex;
 
 	hex = "";
-	if (dec == 0)
-		hex = "0";
 	hex_conv_sub(dec, &hex);
 	if (memswitch)
 		hex = ft_strjoin_fl(&hex, "x0");
