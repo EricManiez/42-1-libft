@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_printf_prec_parse.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/22 09:56:07 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/09 17:26:04 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_uitoa(unsigned long n)
+int			pf_prec_parse(char *cs)
 {
-	char	*res;
+	char	*prec;
+	int		ret;
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	prec = ft_memalloc(1);
+	while (*cs && *cs != '.')
+		cs++;
+	if (!*cs)
+		return (-1);
+	while (*(++cs) && ft_isdigit(*cs))
+		prec = ft_charjoin_f(&prec, *cs);
+	if (!prec[0])
+		return (0);
+	ret = ft_atoi(prec);
+	ft_strdel(&prec);
+	return (ret);
 }

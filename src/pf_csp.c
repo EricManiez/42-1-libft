@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_strarray.c                                :+:      :+:    :+:   */
+/*   pf_csp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/06 10:52:59 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/06 11:57:57 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/10 17:53:26 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Pretty straightforward : prints a string array, each string being separated
-** by either a space (0) or new line (1);
-*/
+#include <ft_printf.h>
 
-#include "libft.h"
-
-void	ft_print_strarray(char **a, int newline)
+void	pf_csp(char **s, t_pf *arg, va_list ap)
 {
-	int	i;
+	char	*p;
+	va_list	cpy;
 
-	i = -1;
-	if (!a || !a[0])
+	(void)arg;
+	va_copy(cpy, ap);
+	if ((unsigned long)va_arg(cpy, long) == 0)
 	{
-		ft_putchar('\n');
-		return ;
-	}
-	while (a[++i])
-	{
-		if (!newline)
-		{
-			ft_putstr(a[i]);
-			ft_putchar(' ');
-		}
+		if (!arg->prec)
+			va_arg(ap, int);
 		else
-			ft_putendl(a[i]);
+		{
+			p = ft_dec2hex((unsigned long)va_arg(ap, void*), 0, 0);
+			*s = ft_strjoin_fb(s, &p);
+		}
 	}
-	if (!newline)
-		ft_putchar('\n');
+	else
+	{
+		p = ft_dec2hex((unsigned long)va_arg(ap, void*), 0, 0);
+		*s = ft_strjoin_fb(s, &p);
+	}
+	va_end(cpy);
 }

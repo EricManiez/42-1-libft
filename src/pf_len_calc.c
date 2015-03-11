@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   pf_len_calc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/06 10:45:14 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/09 18:12:40 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_uitoa(unsigned long n)
+size_t		pf_len_calc(va_list cpy, t_pf *arg)
 {
-	char	*res;
+	char	*s;
+	va_list	ccp;
+	size_t	ret;
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	va_copy(ccp, cpy);
+	s = ft_memalloc(1);
+	pf_redirection(&s, arg, ccp);
+	va_end(ccp);
+	ret = ft_strlen(s) + arg->extra_chars;
+	ft_strdel(&s);
+	return (ret);
 }

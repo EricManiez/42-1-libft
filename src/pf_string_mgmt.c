@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_strarray.c                                :+:      :+:    :+:   */
+/*   pf_string_mgmt.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/06 10:52:59 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/06 10:44:14 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/06 11:20:33 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Pretty straightforward : prints a string array, each string being separated
-** by either a space (0) or new line (1);
-*/
+#include "ft_printf.h"
 
-#include "libft.h"
-
-void	ft_print_strarray(char **a, int newline)
+void		pf_string_mgmt(char **s, va_list ap, char *cs)
 {
-	int	i;
+	va_list	cpy;
+	char	*sub;
 
-	i = -1;
-	if (!a || !a[0])
+	va_copy(cpy, ap);
+	if (va_arg(cpy, char*))
 	{
-		ft_putchar('\n');
-		return ;
-	}
-	while (a[++i])
-	{
-		if (!newline)
+		if (ft_strchr(cs, '.'))
 		{
-			ft_putstr(a[i]);
-			ft_putchar(' ');
+			sub = ft_strsub(va_arg(ap, char*), 0, pf_prec_parse(cs));
+			*(s) = ft_strjoin_fb(s, &sub);
 		}
 		else
-			ft_putendl(a[i]);
+			*(s) = ft_strjoin_fl(s, va_arg(ap, char*));
 	}
-	if (!newline)
-		ft_putchar('\n');
+	else
+		*(s) = ft_strjoin_fl(s, "(null)");
+	va_end(cpy);
 }

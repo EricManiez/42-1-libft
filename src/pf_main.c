@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/14 15:56:25 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/10 19:11:16 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_uitoa(unsigned long n)
+int		ft_printf(const char *format, ...)
 {
-	char	*res;
+	char	*str;
+	va_list	ap;
+	size_t	ret;
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	setlocale(LC_ALL, "en_US.UTF-8");
+	str = ft_memalloc(1);
+	va_start(ap, format);
+	ret = pf_read_loop(&str, ap, (char*)format);
+	write(1, str, ft_strlen(str));
+	va_end(ap);
+	ret += ft_strlen(str);
+	if (ret)
+		ft_strdel(&str);
+	return (ret);
 }

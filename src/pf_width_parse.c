@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_strarray.c                                :+:      :+:    :+:   */
+/*   ft_printf_width_parse.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/06 10:52:59 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/21 13:29:38 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/09 16:29:22 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Pretty straightforward : prints a string array, each string being separated
-** by either a space (0) or new line (1);
-*/
+#include "ft_printf.h"
 
-#include "libft.h"
-
-void	ft_print_strarray(char **a, int newline)
+size_t		pf_width_parse(char *cs)
 {
-	int	i;
+	char	*width;
+	int		i;
+	int		ret;
 
+	width = ft_memalloc(1);
 	i = -1;
-	if (!a || !a[0])
+	while (cs[++i] && (!ft_isdigit(cs[i]) || cs[i] == '0'))
 	{
-		ft_putchar('\n');
-		return ;
-	}
-	while (a[++i])
-	{
-		if (!newline)
+		if (cs[i] && cs[i] == '.')
 		{
-			ft_putstr(a[i]);
-			ft_putchar(' ');
+			while (cs[++i] && ft_isdigit(cs[i]))
+				;
 		}
-		else
-			ft_putendl(a[i]);
 	}
-	if (!newline)
-		ft_putchar('\n');
+	while (cs[i] && ft_isdigit(cs[i]))
+		width = ft_charjoin_f(&width, cs[i++]);
+	ret = ft_atoi(width);
+	ft_strdel(&width);
+	return (ret);
 }

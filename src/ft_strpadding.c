@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 16:44:52 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/21 13:55:20 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/09 13:19:12 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_strpadding(size_t size, char c, char **s)
 {
 	while (size)
 	{
-		*(s) = ft_charjoin(*(s), c);
+		*(s) = ft_charjoin_f(s, c);
 		size--;
 	}
 }

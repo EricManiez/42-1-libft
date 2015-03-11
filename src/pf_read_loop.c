@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_strarray.c                                :+:      :+:    :+:   */
+/*   ft_printf_read_loop.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/06 10:52:59 by emaniez          ###   ########.fr       */
+/*   Created: 2015/01/15 12:04:15 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/09 18:14:55 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Pretty straightforward : prints a string array, each string being separated
-** by either a space (0) or new line (1);
-*/
+#include "ft_printf.h"
 
-#include "libft.h"
-
-void	ft_print_strarray(char **a, int newline)
+int		pf_read_loop(char **str, va_list ap, char *format)
 {
-	int	i;
+	char	*cs;
+	int		prog;
+	int		extra;
 
-	i = -1;
-	if (!a || !a[0])
+	prog = -1;
+	cs = ft_memalloc(1);
+	extra = 0;
+	while ((prog = pf_parser(format, str, &cs, prog)))
 	{
-		ft_putchar('\n');
-		return ;
+		if (cs[0])
+			extra += pf_typedef(cs, str, ap);
 	}
-	while (a[++i])
-	{
-		if (!newline)
-		{
-			ft_putstr(a[i]);
-			ft_putchar(' ');
-		}
-		else
-			ft_putendl(a[i]);
-	}
-	if (!newline)
-		ft_putchar('\n');
+	return (extra);
 }

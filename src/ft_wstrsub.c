@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2014/11/06 10:35:15 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/10 19:30:08 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_uitoa(unsigned long n)
+char	*ft_wstrsub(wchar_t const *s, unsigned int start, size_t len)
 {
-	char	*res;
+	unsigned int		j;
+	char				*sub;
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	j = -1;
+	sub = ft_memalloc(1);
+	while (++j < len)
+		sub = ft_wcharjoin_f(&sub, s[start + j]);
+	return (sub);
 }

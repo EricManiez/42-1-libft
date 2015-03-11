@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_strarray.c                                :+:      :+:    :+:   */
+/*   ft_check_strnumarray_sort.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 13:59:17 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/06 10:52:59 by emaniez          ###   ########.fr       */
+/*   Created: 2015/02/04 10:59:48 by emaniez           #+#    #+#             */
+/*   Updated: 2015/02/06 15:33:57 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Pretty straightforward : prints a string array, each string being separated
-** by either a space (0) or new line (1);
+** Usage : when sorting an array of strings, in which all strings are numbers,
+** and we would like to sort numerically, with the lowest value at the front of
+** the array.
+** Function returns 1 if the array is sorted, 0 if not.
 */
 
 #include "libft.h"
 
-void	ft_print_strarray(char **a, int newline)
+int		ft_check_strnumarray_sort(char **a)
 {
 	int	i;
 
-	i = -1;
-	if (!a || !a[0])
-	{
-		ft_putchar('\n');
-		return ;
-	}
+	i = 0;
 	while (a[++i])
 	{
-		if (!newline)
-		{
-			ft_putstr(a[i]);
-			ft_putchar(' ');
-		}
-		else
-			ft_putendl(a[i]);
+		if (a[i] && ft_atoi(a[i - 1]) > ft_atoi(a[i]))
+			return (0);
 	}
-	if (!newline)
-		ft_putchar('\n');
+	return (1);
 }

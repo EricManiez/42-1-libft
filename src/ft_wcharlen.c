@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/10 17:19:02 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/10 17:23:17 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_uitoa(unsigned long n)
+size_t	ft_wcharlen(wchar_t c)
 {
-	char	*res;
+	char	*s;
+	size_t	len;
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	s = ft_memalloc(1);
+	s = ft_wcharjoin_f(&s, c);
+	len = ft_strlen(s);
+	ft_strdel(&s);
+	return (len);
 }

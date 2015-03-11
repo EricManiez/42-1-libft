@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   pf_redirection.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 11:54:59 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/09 09:25:01 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/06 11:23:07 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/10 18:52:03 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ft_printf.h>
 
-char	*ft_uitoa(unsigned long n)
+void	pf_redirection(char **s, t_pf *arg, va_list ap)
 {
-	char	*res;
+	void	(*pfun[7])(char **s, t_pf *arg, va_list ap);
 
-	res = ft_memalloc(1);
-	if (n == 0)
-		return (ft_charjoin_f(&res, '0'));
-	while (n)
-	{
-		res = ft_charjoin_f(&res, n % 10 + 48);
-		n = n / 10;
-	}
-	return (ft_strrev(res));
+	pfun[S] = &pf_css;
+	pfun[P] = &pf_csp;
+	pfun[D] = &pf_csd;
+	pfun[O] = &pf_cso;
+	pfun[U] = &pf_csu;
+	pfun[X] = &pf_csx;
+	pfun[C] = &pf_csc;
+	if (arg->cs >= 0)
+		pfun[arg->cs](s, arg, ap);
+	else
+		*s = ft_charjoin_f(s, arg->cscpy[ft_strlen(arg->cscpy) - 1]);
 }
