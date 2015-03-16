@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_main.c                                          :+:      :+:    :+:   */
+/*   ft_hash_char_cumul.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/14 15:56:25 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/10 19:11:16 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/16 10:05:40 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/16 10:37:37 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_hash.h>
 
-int		ft_printf(const char *format, ...)
+size_t	ft_hash_char_cumul31(char *key, size_t table_size)
 {
-	char	*str;
-	va_list	ap;
-	size_t	ret;
+	size_t	hash;
+	int		i;
 
-	setlocale(LC_ALL, "en_US.UTF-8");
-	str = ft_memalloc(1);
-	va_start(ap, format);
-	ret = pf_read_loop(&str, ap, (char*)format);
-	write(1, str, ft_strlen(str));
-	va_end(ap);
-	ret += ft_strlen(str);
-	if (ret)
-		ft_strdel(&str);
-	return (ret);
+	hash = 0;
+	i = -1;
+	while (key[++i])
+		hash = (hash << 5) + key[i] - hash;
+	return (hash % table_size);
 }

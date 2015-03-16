@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/06 11:17:40 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/16 15:27:05 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,34 @@
 SRC_PATH = ./src/
 
 SRC_NAME = ft_printf.c \
-		   ft_printf_parser.c \
-		   ft_printf_typedef.c \
-		   ft_printf_read_loop.c \
-		   ft_printf_sign_print.c \
-		   ft_printf_width_mgmt.c \
-		   ft_printf_pre_print.c \
-		   ft_printf_width_parse.c \
-		   ft_printf_prec_parse.c \
-		   ft_printf_string_mgmt.c \
-		   ft_printf_len_calc.c \
-		   ft_printf_post_print.c \
-		   ft_printf_itoa.c \
+		   ft_asprintf.c \
+		   ft_retprintf.c \
+		   pf_read_loop.c \
+		   pf_parser.c \
+		   pf_typedef.c \
+		   pf_redirection.c \
+		   pf_css.c \
+		   pf_csp.c \
+		   pf_csd.c \
+		   pf_csdlm.c \
+		   pf_cso.c \
+		   pf_csolm.c \
+		   pf_csu.c \
+		   pf_csulm.c \
+		   pf_csx.c \
+		   pf_csxlm.c \
+		   pf_csc.c \
+		   pf_struct_fill.c \
+		   pf_sign_print.c \
+		   pf_width_mgmt.c \
+		   pf_pre_print.c \
+		   pf_width_parse.c \
+		   pf_prec_parse.c \
+		   pf_string_mgmt.c \
+		   pf_len_calc.c \
+		   pf_post_print.c \
+		   pf_itoa.c \
+		   pf_wstrsub.c \
 		   ft_atoi.c \
 		   ft_atol.c \
 		   ft_bzero.c \
@@ -68,6 +84,8 @@ SRC_NAME = ft_printf.c \
 		   ft_pow.c \
 		   ft_putchar.c \
 		   ft_putchar_fd.c \
+		   ft_putwchar.c \
+		   ft_wcharlen.c \
 		   ft_putendl.c \
 		   ft_putendl_fd.c \
 		   ft_putnbr.c \
@@ -88,12 +106,15 @@ SRC_NAME = ft_printf.c \
 		   ft_striter.c \
 		   ft_striteri.c \
 		   ft_strjoin.c \
-		   ft_charjoin.c \
-		   ft_charjoin_f.c \
 		   ft_strjoin_fb.c \
 		   ft_strjoin_fl.c \
 		   ft_strjoin_fr.c \
 		   ft_strnjoin.c \
+		   ft_wstrjoin_f.c \
+		   ft_charjoin.c \
+		   ft_charjoin_f.c \
+		   ft_wcharjoin.c \
+		   ft_wcharjoin_f.c \
 		   ft_strlcat.c \
 		   ft_strlen.c \
 		   ft_strmap.c \
@@ -108,6 +129,7 @@ SRC_NAME = ft_printf.c \
 		   ft_strsplit.c \
 		   ft_strstr.c \
 		   ft_strsub.c \
+		   ft_wstrsub.c \
 		   ft_strtrim.c \
 		   ft_tolower.c \
 		   ft_tolowerstr.c \
@@ -150,6 +172,8 @@ SRC_NAME = ft_printf.c \
 		   mlx_draw_circle.c \
 		   ft_free_str_arr.c \
 		   ft_arrstr.c \
+		   ft_hash_char_cumul.c \
+		   ft_hash_char_cumul31.c \
 
 INC_PATH = ./includes/
 

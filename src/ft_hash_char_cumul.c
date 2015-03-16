@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_width_parse.c                            :+:      :+:    :+:   */
+/*   ft_hash_char_cumul.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/21 13:29:38 by emaniez           #+#    #+#             */
-/*   Updated: 2015/01/22 10:05:27 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/16 10:05:40 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/16 10:37:25 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_hash.h>
 
-size_t		ft_printf_width_parse(char *cs)
+size_t	ft_hash_char_cumul(char *key, size_t table_size)
 {
-	char	*width;
+	size_t	hash;
+	int		i;
 
-	width = "";
-	while (*cs && *cs != '.' && (!ft_isdigit(*cs) || *cs == '0'))
-		cs++;
-	while (*cs && ft_isdigit(*cs))
-	{
-		width = ft_charjoin(width, *cs);
-		cs++;
-	}
-	return (ft_atoi(width));
+	hash = 0;
+	i = -1;
+	while (key[++i])
+		hash += key[i];
+	return (hash % table_size);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 12:43:14 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/04 09:37:58 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/06 10:48:29 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/16 15:26:46 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits.h>
 # include "ft_printf.h"
 # include "ft_mlx.h"
+# include "ft_hash.h"
 
 typedef struct		s_list
 {
@@ -41,6 +42,12 @@ typedef struct		s_lst
 	struct s_node	*head;
 	struct s_node	*tail;
 }					t_lst;
+
+int					ft_printf(const char *format, ...);
+
+int					ft_asprintf(char **ret, const char *format, ...);
+
+char				*ft_retprintf(const char *format, ...);
 
 int					get_next_line(int const fd, char **line);
 
@@ -108,6 +115,10 @@ void				ft_putchar_fd(char c, int fd);
 
 void				ft_putchar(char c);
 
+void				ft_putwchar(wchar_t c);
+
+size_t				ft_wcharlen(wchar_t c);
+
 void				ft_putendl_fd(char const *s, int fd);
 
 void				ft_putendl(char const *s);
@@ -142,6 +153,8 @@ char				*ft_strtrim(char const *s);
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
+char				*ft_wstrsub(wchar_t const *s, unsigned int st, size_t len);
+
 char				*ft_strjoin(char const *s1, char const *s2);
 
 char				*ft_strjoin_fb(char **s1, char **s2);
@@ -150,9 +163,15 @@ char				*ft_strjoin_fl(char **s1, char const *s2);
 
 char				*ft_strjoin_fr(char const *s1, char **s2);
 
+char				*ft_wstrjoin_f(char **dst, wchar_t *src);
+
 char				*ft_charjoin(char const *s, char const c);
 
 char				*ft_charjoin_f(char **s, char const c);
+
+char				*ft_wcharjoin(char const *s, wchar_t const c);
+
+char				*ft_wcharjoin_f(char **s, wchar_t const c);
 
 char				*ft_strnjoin(char const *s1, char const *s2, size_t length);
 
@@ -196,25 +215,28 @@ t_list				*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 
-t_node				*ft_lst_create_node(void *content, size_t content_size);
+t_node				*ft_lst_create_node(void *content,
+		size_t content_size, char *key);
 
 t_lst				*ft_lst_create(void);
 
-t_lst				*ft_lst_init(void *content, size_t content_size);
+t_lst				*ft_lst_init(void *content, size_t cntnt_size, char *key);
 
 size_t				ft_lst_len(t_lst *lst);
 
 void				ft_lst_link(t_node *node1, t_node *node2);
 
-size_t				ft_lst_push(t_lst *lst, void *content, size_t content_size);
+size_t				ft_lst_push(t_lst *lst, void *content,
+		size_t content_size, char *key);
 
-size_t				ft_lst_unshift(t_lst *lst, void *cntnt, size_t cntnt_size);
+size_t				ft_lst_unshift(t_lst *lst, void *cntnt,
+		size_t cntnt_size, char *key);
 
 char				*ft_strchrstr(char *s, char *charset);
 
 char				*ft_strchrstrinv(char *s, char *charset);
 
-char				*ft_dec2hex(unsigned long dec, int memswitch, char caps);
+char				*ft_dec2hex(unsigned long long dec, int memsw, int caps);
 
 char				*ft_strrev(char *s);
 
