@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_linelen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaniez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 11:55:19 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/17 14:38:42 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/17 11:30:21 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/17 15:05:25 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	*ft_memalloc(size_t size)
+size_t	ft_linelen(const char *s)
 {
-	void	*mem;
+	size_t	i;
 
-	if (!(mem = malloc(size)) || size == 0)
-		return (NULL);
-	mem = ft_memset(mem, '\0', size);
-	return (mem);
+	i = 0;
+	while (s[i] != '\n')
+		i++;
+	return (i);
 }

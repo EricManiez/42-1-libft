@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/06 10:48:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/16 15:26:46 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/17 15:06:08 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int					ft_asprintf(char **ret, const char *format, ...);
 char				*ft_retprintf(const char *format, ...);
 
 int					get_next_line(int const fd, char **line);
+
+int					get_next_line_basic(int const fd, char **line);
+
+size_t				ft_linelen(const char *s);
 
 size_t				ft_strlen(const char *s);
 
@@ -203,6 +207,10 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 int					ft_isspace(char c);
 
+/*
+** Old List functions
+*/
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
@@ -214,6 +222,10 @@ void				ft_lstiter(t_list *list, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+
+/*
+** New list functions
+*/
 
 t_node				*ft_lst_create_node(void *content,
 		size_t content_size, char *key);

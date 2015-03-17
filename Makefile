@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/16 15:27:05 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/17 15:03:19 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,6 +116,7 @@ SRC_NAME = ft_printf.c \
 		   ft_wcharjoin.c \
 		   ft_wcharjoin_f.c \
 		   ft_strlcat.c \
+		   ft_linelen.c \
 		   ft_strlen.c \
 		   ft_strmap.c \
 		   ft_strmapi.c \
@@ -142,6 +143,7 @@ SRC_NAME = ft_printf.c \
 		   ft_strpadding.c \
 		   ft_abs.c \
 		   get_next_line.c \
+		   get_next_line_basic.c \
 		   ft_endianness.c \
 		   ft_issort_strnumarray.c \
 		   ft_isrsort_strnumarray.c \

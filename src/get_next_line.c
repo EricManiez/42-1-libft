@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/06 10:52:21 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/16 18:52:40 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/17 15:02:34 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static char			*gnl_read(int fd, char **line, char *buf)
 	{
 		buf[ctrl] = '\0';
 		*line = ft_strjoin(*line, buf);
+		ft_bzero(buf, BUF_SIZE + 1);
 	}
 	if (ctrl == 0)
 		return (NULL);
