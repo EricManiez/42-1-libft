@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/06 10:48:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/17 15:06:08 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/19 14:42:22 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,12 @@ size_t				ft_lst_push(t_lst *lst, void *content,
 
 size_t				ft_lst_unshift(t_lst *lst, void *cntnt,
 		size_t cntnt_size, char *key);
+
+t_node				*ft_lst_del_node(t_node *node);
+
+t_node				*ft_lst_pop(t_lst *list);
+
+t_node				*ft_lst_toppop(t_lst *list);
 
 char				*ft_strchrstr(char *s, char *charset);
 
