@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/06 10:48:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/19 14:42:22 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/03/23 10:20:46 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "ft_printf.h"
-# include "ft_mlx.h"
-# include "ft_hash.h"
 
 typedef struct		s_list
 {
@@ -181,6 +178,8 @@ char				*ft_strnjoin(char const *s1, char const *s2, size_t length);
 
 char				**ft_strsplit(char const *s, char c);
 
+char				**ft_spaces_split(char *s);
+
 void				ft_strdel(char **as);
 
 void				ft_memdel(void **ap);
@@ -249,6 +248,14 @@ t_node				*ft_lst_del_node(t_node *node);
 t_node				*ft_lst_pop(t_lst *list);
 
 t_node				*ft_lst_toppop(t_lst *list);
+
+void				ft_lst_free(t_lst *lst);
+
+void				ft_lst_free_node(t_node *node);
+
+/*
+** End List functions.
+*/
 
 char				*ft_strchrstr(char *s, char *charset);
 

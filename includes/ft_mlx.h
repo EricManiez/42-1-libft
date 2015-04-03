@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 13:48:34 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/27 21:03:07 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/04/03 12:01:10 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@
 # include <errno.h>
 # include <libft.h>
 
-# define K_ESC 65307
-# define K_LEFT 65361
-# define K_UP 65362
-# define K_RIGHT 65363
-# define K_DOWN 65364
-# define K_PGUP 65365
-# define K_PGDWN 65366
-# define K_PL 65451
-# define K_MIN 65453
-# define K_A 97
-# define K_B 98
-# define K_C 99
-# define K_D 100
-# define K_G 103
-# define K_I 105
-# define K_L 108
-# define K_O 111
-# define K_P 112
-# define K_R 114
-# define K_S 115
-# define K_W 119
+# define K_ESC 53
+# define K_LEFT 123
+# define K_RIGHT 124
+# define K_DOWN 125
+# define K_UP 126
+# define K_PGUP 116
+# define K_PGDWN 121
+# define K_PL 69
+# define K_MIN 78
+# define K_A 0
+# define K_B 11
+# define K_C 8
+# define K_D 2
+# define K_G 5
+# define K_I 34
+# define K_L 37
+# define K_O 31
+# define K_P 35
+# define K_R 15
+# define K_S 1
+# define K_W 13
 
 # define WIN_W 400
 # define WIN_H 400

@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hash.c                                          :+:      :+:    :+:   */
+/*   free_hash_table.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 10:31:53 by emaniez           #+#    #+#             */
-/*   Updated: 2015/03/23 10:20:40 by emaniez          ###   ########.fr       */
+/*   Created: 2015/03/23 09:23:20 by emaniez           #+#    #+#             */
+/*   Updated: 2015/03/23 10:44:54 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_HASH_H
-# define FT_HASH_H
+#include <ft_hash.h>
 
-# define TABLE_SIZE 10000
+void	ft_hash_free(t_lst **hash_t)
+{
+	int	i;
 
-# include "libft.h"
-
-size_t	ft_hash_char_cumul(char *key, size_t table_size);
-
-size_t	ft_hash_char_cumul31(char *key, size_t table_size);
-
-void	ft_hash_free(t_lst **hash_t);
-
-#endif
+	i = -1;
+	while (++i < TABLE_SIZE)
+	{
+		if (hash_t[i])
+			ft_lst_free(hash_t[i]);
+	}
+}

@@ -6,7 +6,7 @@
 #    By: emaniez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/04 16:09:39 by emaniez           #+#    #+#              #
-#    Updated: 2015/03/19 14:37:03 by emaniez          ###   ########.fr        #
+#    Updated: 2015/03/23 10:20:28 by emaniez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,8 @@ SRC_NAME = ft_printf.c \
 		   ft_lst_del_node.c \
 		   ft_lst_pop.c \
 		   ft_lst_toppop.c \
+		   ft_lst_free.c \
+		   ft_lst_free_node.c \
 		   ft_memalloc.c \
 		   ft_memccpy.c \
 		   ft_memchr.c \
@@ -131,6 +133,7 @@ SRC_NAME = ft_printf.c \
 		   ft_strnstr.c \
 		   ft_strrchr.c \
 		   ft_strsplit.c \
+		   ft_spaces_split.c \
 		   ft_strstr.c \
 		   ft_strsub.c \
 		   ft_wstrsub.c \
@@ -179,12 +182,14 @@ SRC_NAME = ft_printf.c \
 		   ft_arrstr.c \
 		   ft_hash_char_cumul.c \
 		   ft_hash_char_cumul31.c \
+		   ft_hash_free.c \
 
 INC_PATH = ./includes/
 
 INC_NAME = libft.h \
 		   ft_printf.h \
 		   ft_mlx.h \
+		   ft_hash.h \
 
 OBJ_PATH = ./obj/
 
